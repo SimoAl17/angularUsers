@@ -14,7 +14,7 @@ export class SingleUserPageComponent implements OnInit {
   constructor(private conServ: ConnectionService) { }
 
   ngOnInit(): void {
-    this.conServ.getUser().subscribe(userData => (this.user = userData));
+    this.conServ.getUser(1).subscribe(userData => (this.user = userData));
     
   }
 

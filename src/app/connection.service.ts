@@ -27,8 +27,8 @@ export class ConnectionService {
     );
   }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>("https://jsonplaceholder.typicode.com/users/" + "4");
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>("https://jsonplaceholder.typicode.com/users/" + id);
 
   }
   
