@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddressCardComponent } from './address-card/address-card.component';
 import { SingleUserPageComponent } from './single-user-page/single-user-page.component';
 import { UserDataComponent } from './user-data/user-data.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserDataComponent } from './user-data/user-data.component';
     PageNotFoundComponent,
     AddressCardComponent,
     SingleUserPageComponent,
-    UserDataComponent
+    UserDataComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

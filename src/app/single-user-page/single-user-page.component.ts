@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ConnectionService } from '../connection.service';
+import { Post } from '../post';
 import { User } from '../user';
 
 @Component({
@@ -10,13 +12,27 @@ import { User } from '../user';
 export class SingleUserPageComponent implements OnInit {
 
   user?: User;
+  posts?: Post[];
 
-  constructor(private conServ: ConnectionService) { }
+  constructor(private conServ: ConnectionService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.conServ.getUser(1).subscribe(userData => (this.user = userData));
+    const idS = this.route.snapshot.paramMap.get("id");
+    let id = 0;
+    if (idS) {
+      id = parseInt(this.route.snapshot.paramMap.get("id")!);
+    }
+    this.conServ.getUser(id).subscribe(userData => this.user = userData);
     
   }
 
+  loadPosts(){
+    if (this.user) {
+      this.conServ.getPostsOfUser(this.user.id).subscribe(
+        data => this.posts = data
+      )  
+    }
+    
+  }
 
 }

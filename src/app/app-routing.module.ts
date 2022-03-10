@@ -6,7 +6,7 @@ import { SingleUserPageComponent } from './single-user-page/single-user-page.com
 
 const routes: Routes = [
   {path: "", redirectTo: "/users", pathMatch: "full"},
-  {path: "user", component: SingleUserPageComponent},
+  {path: "user/:id", component: SingleUserPageComponent},
   {path: "users", component: ListComponent},
   {path: "**", component: PageNotFoundComponent}
 ];

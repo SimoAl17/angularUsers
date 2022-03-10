@@ -2,7 +2,7 @@
 
     <div class="userData">
         <div class="data">
-            <app-user-data [user]="user"></app-user-data>
+            <app-user-data [isPartial]="false" [user]="user"></app-user-data>
         </div>
         <div class="right-container">
             <div class="address">indirizzo</div>
@@ -10,8 +10,10 @@
         </div>
         
     </div>
-    <button>Load Post</button>
+    <button (click)="loadPosts()">Load Post</button>
 
-    <div></div>
+    <div *ngIf="posts">
+        <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    </div>
 
 </div>

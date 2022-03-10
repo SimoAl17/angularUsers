@@ -10,6 +10,7 @@ import { User } from '../user';
 export class UserDataComponent implements OnInit {
 
   @Input() user?: User;
+  @Input() isPartial?: boolean;
 
   constructor(private conServ: ConnectionService) { }
 

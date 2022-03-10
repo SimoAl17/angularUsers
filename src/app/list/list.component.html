@@ -1,3 +1,6 @@
 <div *ngIf="users">
-    <app-details-list *ngFor="let user of users" [user]="user"></app-details-list>
+    <a *ngFor="let user of users" href="/user/{{user.id}}">
+        <app-details-list [isPartial]="true" [user]="user"></app-details-list>
+    </a>
+    
 </div>

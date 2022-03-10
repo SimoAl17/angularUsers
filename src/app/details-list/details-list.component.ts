@@ -10,6 +10,7 @@ import { User } from '../user';
 export class DetailsListComponent implements OnInit {
 
   @Input() user?: User;
+  @Input() isPartial?: boolean;
 
   constructor() { }
 
